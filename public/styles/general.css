@@ -1,0 +1,23 @@
+:root {
+    --bg-1: #202020;
+    --bg-2: #303030;
+    --bg-3: #404040;
+    --accent-1: #FFC000;
+    --accent-2: #FAC000;
+    --accent-3: #FAD000;
+    --text-main: #EFEFEF;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100vw;
+    min-height: 100vh;
+        height: auto;
+    overflow-x: hidden;
+    background-color: var(--bg-2);
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>YT Download Home</title>
+        <link href = "/styles/general.css" rel = "stylesheet" type = "text/css">
+        <link href = "/styles/home.css" rel = "stylesheet" type = "text/css">
+    </head>
+    <body>
+        <input type = "text" id = "query" autocomplete = "off" placeholder = "Search for a video...">
+        <div id = "videos"></div>
+        <div id = "download-info">
+            <div id = "about">
+                <a id = "link"></a>
+                <img id = "image">
+            </div>
+            <div id = "options">
+                <select id = "quality">
+                    <option selected disabled>Quality</option>
+                </select>
+                <select id = "type">
+                    <option value = "video">Video</option>
+                    <option value = "audio">Audio</option>
+                    <option value = "videoandaudio">Full</option>
+                </select>
+                <button id = "download">Download</button>
+            </div>
+        </div>
+        <div id = "loading"></div>
+
+        <script src = "/scripts/home.js"></script>
+    </body>
+</html>

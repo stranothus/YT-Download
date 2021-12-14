@@ -24,24 +24,24 @@ async function selectVideo(id) {
         return;
     }
 
-    data = data[id];
+    data = await fetch("/details/" + data[id].id)
+    .then(response => response.json())
+    .catch(err => ({ length: 0 }));
 
     loading.textContent = "";
     query.style.display = "none";
     info.style.display = "block";
 
-    link.href = data.url;
+    link.href = "https://www.youtube.com/watch?v=" + data.id;
     link.textContent = data.title;
 
-    image.src = data.metadata.thumbnails[0].url;
+    image.src = data.thumbnail.url;
 
-    let thumbnails = data.metadata.thumbnails;
-
-    thumbnails.forEach(v => {
+    data.metadata.available_qualities.forEach(v => {
         let option = document.createElement("option");
 
-        option.textContent = v.width;
-        option.value = v.width + "p";
+        option.textContent = v;
+        option.value = v;
 
         quality.appendChild(option);
     });

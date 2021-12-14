@@ -24,6 +24,16 @@ app.get("/info/:key", async (req, res) => {
     res.json(search.videos);
 });
 
+app.get("/details/:key", async (req, res) => {
+    let params = req.params;
+    let key = params.key;
+
+    let youtube = await new Innertube();
+    let details = await youtube.getDetails(key);
+
+    res.json(details);
+});
+
 app.get("/download/:key/:id", async (req, res) => {
     let params = req.params;
     let key = params.key;
